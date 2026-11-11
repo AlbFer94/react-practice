@@ -36,6 +36,10 @@ body {
   margin-top: 0.25rem;
 }
 
+img {
+  width: 5rem;
+}
+
 .nav-list {
   display: flex;
   gap: 1.5rem;
