@@ -1,4 +1,5 @@
 import Card from "./Card";
+import SectionTitle from "./SectionTitle";
 
 // TODO: ricevi la prop "sectionTitle" nella firma del componente
 function Main() {
@@ -6,7 +7,8 @@ function Main() {
     <main className="main">
       <div className="container">
         {/* TODO: sostituisci il testo fisso con la prop "sectionTitle" */}
-        <h2 className="section-title">Titolo sezione</h2>
+
+        <SectionTitle sectionTitle="I Nostri Prodotti" />
 
         <div className="cards-grid">
           {/* TODO: passa a ogni Card props diverse: title, description, price, image, isNew, buttonText */}
