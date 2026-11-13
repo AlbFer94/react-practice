@@ -31,7 +31,7 @@ function Card(props) {
         <p className="card-description">{cardEelements.description}</p>
 
         {/* TODO: prop "price" (prova anche a formattarla, es. 19.90 → "€ 19,90") */}
-        <p className="card-price">€ {cardEelements.price}</p>
+        <p className="card-price">€ {cardEelements.price.toFixed(2)}</p>
 
         {/* TODO: inoltra a Button la prop "buttonText" della Card (prop drilling) */}
         {/* DONE: Non ho usato prop drilling ma ho gestito la casistica delle classi per il button con un boolean e ternario */}
