@@ -16,10 +16,7 @@ function Card(props) {
   return (
     <article className="card">
       {/* TODO: mostra il badge SOLO se la prop "isNew" è true */}
-      {cardEelements.isNew ?
-        <span className="card-badge">New</span>
-        : " "
-      }
+      {cardEelements.isNew && <span className="card-badge">New</span>}
 
       {/* TODO: sostituisci il riquadro con un <img> che usa la prop "image" (e "title" come alt) */}
       <div className="card-image">
@@ -37,7 +34,9 @@ function Card(props) {
         <p className="card-price">€ {cardEelements.price}</p>
 
         {/* TODO: inoltra a Button la prop "buttonText" della Card (prop drilling) */}
-        <Button />
+        {/* DONE: Non ho usato prop drilling ma ho gestito la casistica delle classi per il button con un boolean e ternario */}
+        <Button variant={false} label="Scopri di Più" />
+        <Button variant={true} label="Aggiungi al Carrello" />
       </div>
     </article>
   );
