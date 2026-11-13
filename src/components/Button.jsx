@@ -1,12 +1,16 @@
 // TODO: ricevi le props (label, variant)
-function Button() {
+function Button(props) {
+
+  const variant = props.variant;
+  const label = props.label;
+  const classi = variant ? "btn btn-primary" : "btn btn-secondary";
   return (
     // TODO: usa la prop "variant" ("primary" | "secondary") per scegliere la classe:
     //       btn-primary oppure btn-secondary
-    <button className="btn btn-primary">
+    < button className={classi} >
       {/* TODO: sostituisci il testo fisso con la prop "label" */}
-      Scopri di più
-    </button>
+      {label}
+    </button >
   );
 }
 
