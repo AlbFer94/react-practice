@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "./Button";
 
 // TODO: ricevi le props (title, description, price, image, isNew, buttonText)
@@ -10,6 +11,12 @@ function Card(props) {
     description: props.description,
     price: props.price,
     isNew: props.isNew
+  }
+
+  const [toggle, setToggle] = useState(false);
+
+  function expand() {
+    setToggle(!toggle);
   }
 
 
@@ -28,14 +35,15 @@ function Card(props) {
         <h3 className="card-title">{cardEelements.title}</h3>
 
         {/* TODO: prop "description" */}
-        <p className="card-description">{cardEelements.description}</p>
+
+        {toggle && <p className="card-description">{cardEelements.description}</p>}
 
         {/* TODO: prop "price" (prova anche a formattarla, es. 19.90 → "€ 19,90") */}
         <p className="card-price">€ {cardEelements.price.toFixed(2)}</p>
 
         {/* TODO: inoltra a Button la prop "buttonText" della Card (prop drilling) */}
         {/* DONE: Non ho usato prop drilling ma ho gestito la casistica delle classi per il button con un boolean e ternario */}
-        <Button variant={false} label="Scopri di Più" />
+        <Button onClick={expand} variant={false} label="Scopri di Più" />
         <Button variant={true} label="Aggiungi al Carrello" />
       </div>
     </article>
